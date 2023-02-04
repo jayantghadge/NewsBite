@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NewsBite</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-dark bg-primary navbar-expand-lg bg-body-tertiary fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="img/newsbite-logo.png" style="height: 50px; width:150px;"" alt="">
+                </a>
+            <button class=" navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">
+                                <img src="img/home.png" style="height: 25px; width:25px; margin-bottom:5px;" alt="">
+                                Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                <img src="img/contact.png" style="height: 25px; width:25px; margin-bottom:5px;" alt="">
+                                Contact
+                            </a>
+                            <ul class="dropdown-menu" id="contact-menu">
+                                <li><a class="dropdown-item" href="https://github.com/jayantghadge" target="_blank">
+                                        <img src="img/github-logo.svg" alt="">Github
+                                    </a></li>
+                                <li><a class="dropdown-item" href="https://www.linkedin.com/in/jayant-ghadge-700739181"
+                                        target="_blank">
+                                        <img src="img/linkedin-logo.svg" alt="">LinkedIn
+                                    </a></li>
+                                <li>
+                                </li>
+                                <li><a class="dropdown-item"
+                                        href="https://twitter.com/JayantGhadge?t=K-KnQXbHR9yAbYLVXjYbjA&s=09"
+                                        target="_blank">
+                                        <img src="img/twitter-logo.svg" alt="">Twitter
+                                    </a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div style="display: flex;">
+                        <input class="form-control me-2" placeholder="Search News" id="search-input">
+                        <button class="btn btn-light" id="search">Search</button>
+                    </div>
+                </div>
+        </div>
+    </nav>
+
+    <!-- Category Selector Section -->
+    <div class="d-flex justify-content-center flex-wrap gap-3" style="margin-top: 100px;" id="category-icon">
+        <button type="button" class="btn btn-outline-success mr-2" id="btn-business"><img src="img/business.png" alt="">
+            Business</button>
+
+        <button type="button" class="btn btn-outline-success" id="btn-technology"><img src="img/technology.png" alt="">
+            Technology</button>
+        <button type="button" class="btn btn-outline-success " id="btn-science"><img src="img/science.png" alt="">
+            Science</button>
+        <button type="button" class="btn btn-outline-success" id="btn-sports"><img src="img/sports.png" alt="">
+            Sports</button>
+        <button type="button" class="btn btn-outline-success" id="btn-entertainment"><img
+                src="img/entertainment.png">Entertainment</button>
+        <button type="button" class="btn btn-outline-success " id="btn-health"><img src="img/health.png" alt="">
+            Health</button>
+    </div>
+
+    <!-- News Section -->
+    <h5 id="headline-heading" class="m-4"></h5>
+    <div class="row row-cols-1 row-cols-md-4 g-4 m-auto" id="newsAccordion"></div>
+
+    <!-- Attribution  -->
+    <div class="text-center d-none mt-4" id="attribution">
+        Made with <svg viewBox="0 0 1792 1792" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"
+            style="height: 0.8rem;">
+            <path
+                d="M896 1664q-26 0-44-18l-624-602q-10-8-27.5-26T145 952.5 77 855 23.5 734 0 596q0-220 127-344t351-124q62 0 126.5 21.5t120 58T820 276t76 68q36-36 76-68t95.5-68.5 120-58T1314 128q224 0 351 124t127 344q0 221-229 450l-623 600q-18 18-44 18z"
+                fill="#e25555"></path>
+        </svg> by <a href="https://github.com/jayantghadge" target="_blank">Jayant Ghadge</a>
+    </div>
+</body>
+
+<script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js" async defer></script>
+<script type='text/javascript' src=''></script>
+<script src="script.js"></script>
+</body>
+
+</html>
