@@ -21,38 +21,45 @@ const btnTechnology = document.querySelector("#btn-technology");
 const btnScience = document.querySelector("#btn-science");
 const btnSports = document.querySelector("#btn-sports");
 const btnEntertainment = document.querySelector("#btn-entertainment");
+const spin = document.querySelector(".three-quarter-spinner");
 
 
 window.onload = function () {
     fetchHeadlines();
-
 };
 
 btnBusiness.addEventListener("click", () => {
+    spin.style.display="block";
     fetchBusiness();
 });
 
 btnHealth.addEventListener("click", () => {
+    spin.style.display="block";
     fetchHealth();
 });
 
 btnTechnology.addEventListener("click", () => {
+    spin.style.display="block";
     fetchTechnology();
 });
 
 btnScience.addEventListener("click", () => {
+    spin.style.display="block";
     fetchScience();
 });
 
 btnSports.addEventListener("click", () => {
+    spin.style.display="block";
     fetchSports();
 });
 
 btnEntertainment.addEventListener("click", () => {
+    spin.style.display="block";
     fetchEntertainement();
 });
 
 btnSearch.addEventListener("click", () => {
+    spin.style.display="block";
     fetchSearch();
 });
 
@@ -69,7 +76,6 @@ const fetchHeadlines = async () => {
         console.log(response.status, response.statusText);
         return;
     }
-
 };
 
 const fetchBusiness = async () => {
@@ -83,7 +89,6 @@ const fetchBusiness = async () => {
         console.log(response.status, response.statusText);
         return;
     }
-
 };
 
 const fetchHealth = async () => {
@@ -96,7 +101,6 @@ const fetchHealth = async () => {
         console.log(response.status, response.statusText);
         return;
     }
-
 };
 
 const fetchTechnology = async () => {
@@ -109,20 +113,19 @@ const fetchTechnology = async () => {
         console.log(response.status, response.statusText);
         return;
     }
-
 };
 
 const fetchScience = async () => {
     const response = await fetch(science);
     if (response.status >= 200 && response.status < 300) {
         const json = await response.json();
+        
         display(json);
     } else {
         // handle errors
         console.log(response.status, response.statusText);
         return;
     }
-
 };
 
 const fetchSports = async () => {
@@ -135,7 +138,6 @@ const fetchSports = async () => {
         console.log(response.status, response.statusText);
         return;
     }
-
 };
 
 const fetchEntertainement = async () => {
@@ -148,7 +150,6 @@ const fetchEntertainement = async () => {
         console.log(response.status, response.statusText);
         return;
     }
-
 };
 
 const fetchSearch = async () => {
@@ -156,19 +157,20 @@ const fetchSearch = async () => {
     console.log(query);
     const response = await fetch(search + query);
     if (response.status >= 200 && response.status < 300) {
-        const json = await response.json();
+        const json = await response.json(); 
         display(json);
-        newsHead.innerHTML = `Showing Results for ${query}`;
+        newsHead.innerHTML = `Showing Results for ${query} ->`;
     } else {
         // handle errors
         console.log(response.status, response.statusText);
         return;
     }
-
 };
 
 function display(json) {
+    spin.style.display="none";
     var articles = json.results;
+    let categoryHeading = "";
     let newsContent = "";
     for (let article of articles) {
         var news = `<div class="col">
@@ -187,8 +189,10 @@ function display(json) {
                                 </div>
                         </div>`
         newsContent += news;
+        categoryHeading = `${article.category[0]} News ->`.toUpperCase();
         console.log(newsContent);
     }
+    newsHead.innerHTML=categoryHeading;
     newsAccordion.innerHTML = newsContent;
     document.querySelector("#attribution").classList.remove('d-none')
 };
