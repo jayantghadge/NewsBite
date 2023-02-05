@@ -3,7 +3,7 @@ const apikey = "pub_1650789bea8ca26de44691ac338d839e1a3b7";
 const headline = `https://newsdata.io/api/1/news?apikey=${apikey}&category=top&language=en&domain=livemint`;
 const business = `https://newsdata.io/api/1/news?apikey=${apikey}&category=business&domain=livemint`;
 const health = `https://newsdata.io/api/1/news?apikey=${apikey}&category=health&language=en`;
-const science = `https://newsdata.io/api/1/news?apikey=${apikey}&category=science&domain=gizmodo`;
+const science = `https://newsdata.io/api/1/news?apikey=${apikey}&category=science&domain=universetoday`;
 const sports = `https://newsdata.io/api/1/news?apikey=${apikey}&category=sports&language=en&domain=theguardian`;
 const entertainment = `https://newsdata.io/api/1/news?apikey=${apikey}&category=entertainment&language=en&domain=gamespot`;
 const technology = `https://newsdata.io/api/1/news?apikey=${apikey}&category=technology&language=en&domain=livemint`;
